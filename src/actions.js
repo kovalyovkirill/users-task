@@ -46,7 +46,7 @@ export function fetchUsers() {
 
 export function fetchPhotos(albumId) {
     return dispatch => {
-        fetch(`https://jsonplaceholder.typicode.com/photos?albumId${albumId}`)
+        fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`)
             .then(res => res.json())
             .then(data => dispatch(getPhotos(data, albumId)));
     }

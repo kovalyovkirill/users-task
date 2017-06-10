@@ -5,10 +5,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {fetchPhotos} from '../actions';
+import PhotosList from '../components/PhotosList';
 
 class UserAlbums extends React.Component {
     componentDidMount() {
         if (this.props.match.params.albumId) {
+            console.log(this.props.match.params.albumId);
             this.props.fetchPhotos(this.props.match.params.albumId);
         }
     }
@@ -17,6 +19,7 @@ class UserAlbums extends React.Component {
         return (
             <div>
                 <h2>Album name Photos</h2>
+                <PhotosList photos={this.props.photos}/>
             </div>
         )
     }
