@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import UsersList from '../UsersList';
+import UsersList from '../components/UsersList';
 import {connect} from 'react-redux';
 import {fetchUsers} from '../actions';
 
