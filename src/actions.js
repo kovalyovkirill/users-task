@@ -3,6 +3,7 @@
  */
 export const SET_USERS = 'SET_USERS';
 export const GET_ALBUMS = 'GET_ALBUMS';
+export const GET_PHOTOS = 'GET_PHOTOS';
 
 export function setUsers(users) {
     return {
@@ -12,12 +13,18 @@ export function setUsers(users) {
 }
 
 export function getAlbums(albums, userId) {
-    console.log(albums);
-
     return {
         type: GET_ALBUMS,
         albums,
         userId
+    }
+}
+
+export function getPhotos(photos, albumId) {
+    return {
+        type: GET_PHOTOS,
+        photos,
+        albumId
     }
 }
 
@@ -34,5 +41,13 @@ export function fetchUsers() {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(res => res.json())
             .then(data => dispatch(setUsers(data)));
+    }
+}
+
+export function fetchPhotos(albumId) {
+    return dispatch => {
+        fetch(`https://jsonplaceholder.typicode.com/photos?albumId${albumId}`)
+            .then(res => res.json())
+            .then(data => dispatch(getPhotos(data, albumId)));
     }
 }
