@@ -1,7 +1,9 @@
 /**
  * Created by kirill on 05.06.2017.
  */
-import {SET_USERS, GET_ALBUMS, GET_PHOTOS} from '../actions';
+//TODO: Add correct async actions
+
+import {SET_USERS, GET_ALBUMS, GET_PHOTOS, USERS_REQUEST, USERS_SUCCESS, USERS_FAILURE} from '../actions';
 
 export default function users(state = {users: [], albums: [], photos: [], userId: null, albumId: null}, action) {
     switch (action.type) {

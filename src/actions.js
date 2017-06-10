@@ -1,9 +1,36 @@
 /**
  * Created by kirill on 06.06.2017.
  */
+
 export const SET_USERS = 'SET_USERS';
 export const GET_ALBUMS = 'GET_ALBUMS';
 export const GET_PHOTOS = 'GET_PHOTOS';
+
+export const USERS_REQUEST = 'USERS_REQUEST';
+function usersRequest() {
+    return {
+        type: USERS_REQUEST,
+        isUsersLoading: true
+    }
+}
+export const USERS_SUCCESS = 'USERS_SUCCESS';
+function usersSuccess(users) {
+    return {
+        type: USERS_SUCCESS,
+        isUsersLoading: false,
+        usersReceived: true,
+        users
+    }
+}
+
+export const USERS_FAILURE = 'USERS_FAILURE';
+function usersFailure(errors) {
+    return {
+        type: USERS_FAILURE,
+        isUsersLoading: false,
+        errors
+    }
+}
 
 export function setUsers(users) {
     return {
@@ -49,5 +76,16 @@ export function fetchPhotos(albumId) {
         fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`)
             .then(res => res.json())
             .then(data => dispatch(getPhotos(data, albumId)));
+    }
+}
+
+export function fetchNewUsers() {
+    return dispatch => {
+        dispatch(usersRequest())
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(res => res.json())
+            .then(data => dispatch(usersSuccess(data)))
+            .catch(e => dispatch(usersFailure(e)));
     }
 }
