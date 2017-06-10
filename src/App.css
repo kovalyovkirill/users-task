@@ -1,0 +1,35 @@
+.App {
+    text-align: center;
+    min-width: 320px;
+}
+
+.App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+.users-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.user-card {
+    padding: 8px;
+    margin: 8px;
+    -webkit-box-shadow: 0 0 2px 1px rgba(196, 196, 196, 1);
+    -moz-box-shadow: 0 0 2px 1px rgba(196, 196, 196, 1);
+    box-shadow: 0 0 2px 1px rgba(196, 196, 196, 1);
+    min-width: 320px;
+    cursor: pointer;
+}
+
+.user-card:hover {
+    background-color: #ffffd1;
+}
