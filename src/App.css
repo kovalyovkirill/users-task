@@ -4,14 +4,11 @@
 }
 
 .App-header {
-    background-color: #222;
-    height: 150px;
+    background-color: #ffffd1;
+    height: 50px;
     padding: 20px;
     color: white;
-}
-
-.App-intro {
-    font-size: large;
+    vertical-align: middle;
 }
 
 .users-container {
@@ -26,10 +23,24 @@
     -webkit-box-shadow: 0 0 2px 1px rgba(196, 196, 196, 1);
     -moz-box-shadow: 0 0 2px 1px rgba(196, 196, 196, 1);
     box-shadow: 0 0 2px 1px rgba(196, 196, 196, 1);
-    min-width: 320px;
+    width: 320px;
     cursor: pointer;
+    text-align: left;
+}
+
+.user-card a {
+    color: #424242;
+    text-decoration: none;
 }
 
 .user-card:hover {
     background-color: #ffffd1;
+}
+
+.main-link {
+    color: #424242;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: none;
 }

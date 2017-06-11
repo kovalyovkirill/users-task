@@ -9,9 +9,9 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <p className="App-intro">
-                    <Link to="/">Users</Link>
-                </p>
+                <div className="App-header">
+                    <Link className="main-link" to="/">Users</Link>
+                </div>
 
                 <Route exact path="/" component={UsersPage}/>
                 <Route exact path="/:id/albums" component={UserAlbums}/>
