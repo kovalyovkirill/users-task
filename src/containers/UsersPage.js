@@ -5,12 +5,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import UsersList from '../components/UsersList';
 import {connect} from 'react-redux';
-import {fetchNewUsers} from '../actions';
+import {fetchUsersIfNeeded} from '../actions';
 
 class UsersPage extends React.Component {
     componentDidMount () {
-        this.props.fetchNewUsers();
+        this.props.fetchUsersIfNeeded();
     }
+
+    componentDidUpdate(prevProps) {
+        if(prevProps.users.length === this.props.users.length) {
+            this.props.fetchUsersIfNeeded();
+        }
+    }
+
     render() {
         return (
             <div>
@@ -30,7 +37,7 @@ UsersPage.propTypes = {
     isUsersLoading: PropTypes.bool.isRequired,
     isUsersReceived: PropTypes.bool.isRequired,
     errors: PropTypes.object.isRequired,
-    fetchNewUsers: PropTypes.func.isRequired
+    fetchUsersIfNeeded: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
@@ -43,4 +50,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {fetchNewUsers})(UsersPage);
+export default connect(mapStateToProps, {fetchUsersIfNeeded})(UsersPage);

@@ -2,7 +2,7 @@
  * Created by kirill on 05.06.2017.
  */
 
-import {SET_USERS, GET_ALBUMS, GET_PHOTOS, USERS_REQUEST, USERS_SUCCESS, USERS_FAILURE} from '../actions';
+import {GET_ALBUMS, GET_PHOTOS, USERS_REQUEST, USERS_SUCCESS, USERS_FAILURE} from '../actions';
 
 const initialState = {
     users: [],
@@ -36,12 +36,6 @@ export default function users(state = initialState, action) {
             return Object.assign({}, state, {
                 albums: action.albums,
                 userId: action.userId
-            });
-        case SET_USERS:
-            console.log(action.users);
-
-            return Object.assign({}, state, {
-                users: action.users
             });
         case GET_PHOTOS:
             return Object.assign({}, state, {

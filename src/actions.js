@@ -2,7 +2,6 @@
  * Created by kirill on 06.06.2017.
  */
 
-export const SET_USERS = 'SET_USERS';
 export const GET_ALBUMS = 'GET_ALBUMS';
 export const GET_PHOTOS = 'GET_PHOTOS';
 
@@ -32,13 +31,6 @@ function usersFailure(errors) {
     }
 }
 
-export function setUsers(users) {
-    return {
-        type: SET_USERS,
-        users
-    }
-}
-
 export function getAlbums(albums, userId) {
     return {
         type: GET_ALBUMS,
@@ -63,14 +55,6 @@ export function fetchAlbums(userId) {
     }
 }
 
-export function fetchUsers() {
-    return dispatch => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(res => res.json())
-            .then(data => dispatch(setUsers(data)));
-    }
-}
-
 export function fetchPhotos(albumId) {
     return dispatch => {
         fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`)
@@ -87,5 +71,23 @@ export function fetchNewUsers() {
             .then(res => res.json())
             .then(data => dispatch(usersSuccess(data)))
             .catch(e => dispatch(usersFailure(e)));
+    }
+}
+
+function shouldFetchUsers(state) {
+    const {users} = state;
+
+    if (state.isUsersLoading) {
+        return false
+    } else if (users.length === 0) {
+        return true
+    }
+}
+
+export function fetchUsersIfNeeded() {
+    return (dispatch, getState) => {
+        if (shouldFetchUsers(getState())) {
+            return dispatch(fetchNewUsers())
+        }
     }
 }
