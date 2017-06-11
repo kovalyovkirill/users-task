@@ -5,18 +5,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import UsersList from '../components/UsersList';
 import {connect} from 'react-redux';
-import {fetchUsers} from '../actions';
+import {fetchNewUsers} from '../actions';
 
 class UsersPage extends React.Component {
     componentDidMount () {
-        this.props.fetchUsers();
+        this.props.fetchNewUsers();
     }
     render() {
-        console.log(this.props.users);
-
         return (
             <div>
-                <UsersList users={this.props.users}/>
+                <UsersList
+                    users={this.props.users}
+                    isUsersLoading ={this.props.isUsersLoading}
+                    isUsersReceived = {this.props.isUsersReceived}
+                    errors = {this.props.errors}
+                />
             </div>
         )
     }
@@ -24,13 +27,20 @@ class UsersPage extends React.Component {
 
 UsersPage.propTypes = {
     users: PropTypes.array.isRequired,
-    fetchUsers: PropTypes.func.isRequired
+    isUsersLoading: PropTypes.bool.isRequired,
+    isUsersReceived: PropTypes.bool.isRequired,
+    errors: PropTypes.object.isRequired,
+    fetchNewUsers: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
+    console.log(state);
     return {
-        users: state.users
+        users: state.users,
+        isUsersLoading: state.isUsersLoading,
+        isUsersReceived: state.isUsersReceived,
+        errors: state.errors
     }
 }
 
-export default connect(mapStateToProps, {fetchUsers})(UsersPage);
+export default connect(mapStateToProps, {fetchNewUsers})(UsersPage);

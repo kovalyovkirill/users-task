@@ -18,7 +18,7 @@ function usersSuccess(users) {
     return {
         type: USERS_SUCCESS,
         isUsersLoading: false,
-        usersReceived: true,
+        isUsersReceived: true,
         users
     }
 }
@@ -81,7 +81,7 @@ export function fetchPhotos(albumId) {
 
 export function fetchNewUsers() {
     return dispatch => {
-        dispatch(usersRequest())
+        dispatch(usersRequest());
 
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(res => res.json())
