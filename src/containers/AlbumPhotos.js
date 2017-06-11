@@ -10,7 +10,6 @@ import PhotosList from '../components/PhotosList';
 class UserAlbums extends React.Component {
     componentDidMount() {
         if (this.props.match.params.albumId) {
-            console.log(this.props.match.params.albumId);
             this.props.fetchPhotos(this.props.match.params.albumId);
         }
     }

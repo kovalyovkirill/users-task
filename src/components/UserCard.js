@@ -12,7 +12,7 @@ const makeUserAddres = ({address}) => {
 export default function UserCard({user}) {
     return (
         <div className="user-card">
-            <Link to={`/${user.id}/albums`}>
+            <Link to={`/${user.id}/${user.username}/albums`}>
                 <div><b>Name:</b> {user.name}</div>
                 <div><b>Username:</b> {user.username}</div>
                 <div><b>Email:</b> {user.email}</div>

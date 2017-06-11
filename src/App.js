@@ -14,7 +14,7 @@ class App extends Component {
                 </div>
 
                 <Route exact path="/" component={UsersPage}/>
-                <Route exact path="/:id/albums" component={UserAlbums}/>
+                <Route exact path="/:id/:userName/albums" component={UserAlbums}/>
                 <Route path="/:userId/albums/:albumId" component={AlbumPhotos}/>
             </div>
         );

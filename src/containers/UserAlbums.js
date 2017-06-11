@@ -15,9 +15,11 @@ class UserAlbums extends React.Component {
     }
 
     render() {
+        const userName = this.props.match.params.userName;
+
         return (
             <div>
-                <h2>Albums for username</h2>
+                <h2>Albums for {userName}</h2>
                 <UserAlbumsList albums={this.props.albums} userId={this.props.userId}/>
             </div>
         )

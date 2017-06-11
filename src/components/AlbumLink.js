@@ -9,7 +9,7 @@ export default function AlbumLink({album}) {
     return (
         <div className="user-card full-width">
             <Link to={`/${album.userId}/albums/${album.id}`}>
-                <div>
+                <div className="left-padding">
                     <b>Title</b>: {album.title}
                 </div>
             </Link>
