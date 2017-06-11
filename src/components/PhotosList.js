@@ -11,7 +11,7 @@ export default function PhotosList({photos}) {
     );
 
     const usersList = (
-        <div className="albums-container">
+        <div className="users-container">
             {photos.map(photo => <PhotoCard photo={photo} key={photo.id}/>)}
         </div>
     );

@@ -1,6 +1,7 @@
 /**
  * Created by kirill on 06.06.2017.
  */
+import fetch from 'isomorphic-fetch';
 
 export const GET_ALBUMS = 'GET_ALBUMS';
 export const GET_PHOTOS = 'GET_PHOTOS';

@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 export default function PhotoCard({photo}) {
     return (
         <div className="photo-card">
-            <div>Title: {photo.title}</div>
             <img src={photo.thumbnailUrl} alt={photo.title}/>
+            <div>Title: {photo.title}</div>
         </div>
     )
 }

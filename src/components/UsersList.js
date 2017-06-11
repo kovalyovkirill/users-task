@@ -6,8 +6,12 @@ import PropTypes from 'prop-types';
 import UserCard from './UserCard';
 
 export default function UsersList({users, isUsersLoading, isUsersReceived, errors}) {
-    if(errors) {
-        console.log(errors);
+    if(Object.keys(errors).length) {
+        return (
+            <div>
+                <p>Sorry... Something goes wrong. Please reload page.</p>
+            </div>
+        )
     }
 
     const emptyMessage = (

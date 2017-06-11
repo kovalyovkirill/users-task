@@ -8,6 +8,7 @@ import rootReducer from './reducers/users';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import {Provider} from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
+import 'babel-polyfill';
 import './index.css';
 
 const store = createStore(

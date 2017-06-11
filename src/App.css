@@ -10,6 +10,7 @@
     color: white;
     vertical-align: middle;
     margin-bottom: 8px;
+    text-align: left;
 }
 
 .users-container {
@@ -28,7 +29,6 @@
     cursor: pointer;
     text-align: left;
 }
-
 .user-card a {
     color: #424242;
     text-decoration: none;
@@ -70,4 +70,14 @@
 
 .left-padding:hover {
     text-decoration: none;
+}
+
+.photo-card {
+    padding: 8px;
+    margin: 8px;
+    -webkit-box-shadow: 0 0 2px 1px rgba(196, 196, 196, 1);
+    -moz-box-shadow: 0 0 2px 1px rgba(196, 196, 196, 1);
+    box-shadow: 0 0 2px 1px rgba(196, 196, 196, 1);
+    width: 320px;
+    cursor: pointer;
 }

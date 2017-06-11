@@ -14,10 +14,14 @@ class UserAlbums extends React.Component {
         }
     }
 
+
     render() {
+        const albumNameRaw = this.props.match.params.albumName,
+            albumName = albumNameRaw.replace(/_/g," ");
+
         return (
             <div>
-                <h2>Album name Photos</h2>
+                <h2>Album: {albumName}</h2>
                 <PhotosList photos={this.props.photos}/>
             </div>
         )
