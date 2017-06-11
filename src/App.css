@@ -38,6 +38,10 @@
     background-color: #ffffd1;
 }
 
+.user-card:active {
+    background-color: #ffee89;
+}
+
 .main-link {
     color: #424242;
     text-transform: uppercase;
