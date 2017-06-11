@@ -7,10 +7,10 @@ import {Link} from 'react-router-dom';
 
 export default function AlbumLink({album}) {
     return (
-        <div className="album-link">
+        <div className="user-card full-width">
             <Link to={`/${album.userId}/albums/${album.id}`}>
                 <div>
-                    Title: {album.title}
+                    <b>Title</b>: {album.title}
                 </div>
             </Link>
         </div>

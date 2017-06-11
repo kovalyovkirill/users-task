@@ -9,6 +9,7 @@
     padding: 20px;
     color: white;
     vertical-align: middle;
+    margin-bottom: 8px;
 }
 
 .users-container {
@@ -43,4 +44,21 @@
     font-weight: bold;
     font-size: 30px;
     text-decoration: none;
+}
+
+.albums-container {
+    text-align: left;
+}
+
+.album-link {
+    padding: 8px;
+    border-top: 1px solid #424242;
+    border-bottom: 1px solid #424242;
+    margin-bottom: 5px;
+}
+
+.full-width {
+    width: 100%;
+    margin: 8px 0;
+    padding: 8px 0;
 }
